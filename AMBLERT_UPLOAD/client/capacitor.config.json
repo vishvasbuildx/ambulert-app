@@ -1,0 +1,6 @@
+{
+  "appId": "com.vishvas.ambulert",
+  "appName": "AMBULERT",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

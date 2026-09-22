@@ -1,0 +1,441 @@
+/* AMBULERT - Cockpit & Device Simulator CSS Stylesheet */
+
+.cockpit-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-subtle);
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-badge {
+  background-color: var(--red-emergency);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+}
+
+.brand-title {
+  font-size: 20px;
+  color: var(--fg-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-tagline {
+  font-size: 12px;
+  color: var(--fg-secondary);
+  font-weight: 400;
+}
+
+/* Nav Control Tabs */
+.view-tabs {
+  display: flex;
+  background-color: #F3F4F6;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  gap: 2px;
+}
+
+.view-tab {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+}
+
+.view-tab:hover {
+  color: var(--fg-primary);
+}
+
+.view-tab.active {
+  background-color: var(--bg-secondary);
+  color: var(--fg-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.demo-banner {
+  background-color: var(--amber-light);
+  border-bottom: 1.5px solid var(--amber-warning);
+  color: var(--amber-warning);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px 12px;
+}
+
+/* Cockpit Workspace Grid */
+.cockpit-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr 1fr; /* Admin sidebar, Citizen Phone, Driver Phone */
+  gap: 24px;
+  padding: 24px;
+  background-color: #F3F4F6;
+  min-height: calc(100vh - 100px);
+}
+
+/* Full Screen Solo Views */
+.solo-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E5E7EB;
+  min-height: calc(100vh - 65px);
+  padding: 24px 0;
+}
+
+/* Smartphone Shell Layout */
+.phone-casing {
+  width: 375px;
+  height: 720px;
+  background-color: #111827; /* Dark chassis */
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: var(--shadow-floating);
+  position: relative;
+  border: 4px solid #374151;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Phone UI Elements */
+.phone-notch {
+  width: 130px;
+  height: 18px;
+  background-color: #111827;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 1000;
+}
+
+.phone-status-bar {
+  height: 38px;
+  padding: 12px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-primary);
+  z-index: 999;
+  background-color: transparent;
+}
+
+.phone-status-bar.dark-text {
+  color: var(--fg-primary);
+}
+
+.phone-status-bar.light-text {
+  color: white;
+}
+
+.phone-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Auth / Landing page choice layout */
+.choice-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.choice-logo {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.choice-card {
+  background-color: var(--bg-secondary);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.choice-card:hover {
+  border-color: var(--blue-brand);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.06);
+}
+
+.choice-card h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.choice-card p {
+  font-size: 12px;
+  color: var(--fg-secondary);
+}
+
+/* Button UI system */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: none;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--fg-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: 1px solid var(--border-light);
+  color: var(--fg-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-primary);
+  border-color: #CCCCCC;
+}
+
+.btn-emergency {
+  background-color: var(--red-emergency);
+  color: white;
+}
+
+.btn-emergency:hover {
+  background-color: #991B1B;
+}
+
+.btn-green {
+  background-color: var(--green-success);
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #166534;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Inputs and Forms styles */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-field {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  font-size: 13px;
+  background-color: #FAFAFA;
+  transition: var(--transition-fast);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #888888;
+  background-color: white;
+}
+
+/* Swipe to Silence Component */
+.swipe-track {
+  width: 100%;
+  height: 52px;
+  background-color: var(--red-light);
+  border: 1px solid var(--red-emergency);
+  border-radius: var(--radius-pill);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  box-shadow: 0 4px 10px rgba(185, 28, 28, 0.1);
+}
+
+.swipe-label {
+  font-size: 13px;
+  color: var(--red-emergency);
+  font-weight: 600;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.swipe-handle {
+  width: 44px;
+  height: 44px;
+  background-color: var(--red-emergency);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 4px;
+  cursor: grab;
+  z-index: 20;
+  box-shadow: var(--shadow-sm);
+  font-weight: bold;
+}
+
+.swipe-handle:active {
+  cursor: grabbing;
+}
+
+/* Bottom Sheet Container */
+.bottom-sheet {
+  background-color: var(--bg-secondary);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.06);
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-top: 1px solid var(--border-light);
+}
+
+.bottom-sheet-handle {
+  width: 32px;
+  height: 4px;
+  background-color: #E5E7EB;
+  border-radius: 2px;
+  margin: -8px auto 16px auto;
+}
+
+/* Notification Overlay in Citizens Casing */
+.notification-banner {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--red-emergency);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-floating);
+  position: absolute;
+  top: 48px;
+  left: 12px;
+  right: 12px;
+  z-index: 3000;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-70px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Map Markers Styling */
+.amb-marker-dot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--red-emergency);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.user-marker-dot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--blue-brand);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+/* Admin Sidebar styles */
+.admin-sidebar {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: var(--shadow-subtle);
+  padding: 16px;
+}
+
+/* responsive media selectors */
+@media (max-width: 1100px) {
+  .cockpit-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .admin-sidebar {
+    width: 375px;
+  }
+}

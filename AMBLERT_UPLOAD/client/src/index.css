@@ -1,0 +1,126 @@
+/* AMBULERT - Digital Design System Token Definitions */
+
+:root {
+  --bg-primary: #FAF9F6;      /* Calm, warm white/off-white */
+  --bg-secondary: #FFFFFF;    /* Clean white panels */
+  --fg-primary: #1A1A1A;      /* Soft near-black for accessibility */
+  --fg-secondary: #5C5C5C;    /* Muted charcoal for reading hierarchy */
+  --border-light: #E8E7E3;    /* Subtle, soft separator color */
+  --red-emergency: #B91C1C;   /* Restrained emergency crimson, not loud neon */
+  --red-light: #FEE2E2;       /* Soft red alert backgrounds */
+  --green-success: #15803D;   /* Calming success leaf green */
+  --green-light: #DCFCE7;     /* Soft green panel background */
+  --amber-warning: #D97706;   /* Serious but calm amber */
+  --amber-light: #FEF3C7;
+  --blue-brand: #1E3A8A;      /* Trustworthy dark corporate blue */
+  --blue-light: #DBEAFE;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
+  --shadow-floating: 0 10px 30px rgba(0, 0, 0, 0.07), 0 4px 12px rgba(0, 0, 0, 0.03);
+  
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1); /* Apple-style deceleration curve */
+}
+
+/* Reset and Global Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #F3F4F6; /* Screen background surrounding panels */
+  color: var(--fg-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Headings & Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg-primary);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Layout Utilities */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+/* Card layout systems */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px file var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  padding: 24px;
+}
+
+/* Leaflet maps container */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  z-index: 1;
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Standard Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.simulate-vibrate {
+  animation: shake 0.35s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.map-ping-ring {
+  position: absolute;
+  border: 2px solid var(--red-emergency);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: pulse 1.8s infinite ease-in-out;
+  pointer-events: none;
+}
